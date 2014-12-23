@@ -91,8 +91,7 @@ html {
     text-align: right;
 
     .user {
-      @include button(lighten(#34324C, 20%), 20px);
-      color: #eee;
+      @include button(lighten($topbar-background, 30%), #eee, 20px);
 
       .navigation {
         // needs to drop down later
