@@ -1,0 +1,110 @@
+html {
+  background: #111;
+  color: #eee;
+
+  a {
+    color: #E4BF2A;
+
+    &:hover {
+      color: mix(#E4BF2A, yellow);
+      transition: color 0.1s linear 0s;
+    }
+  }
+
+  p, ul, ol {
+    line-height: 130%;
+  }
+
+  h1 {
+    text-shadow: 3px 3px 4px rgba(0,0,0,0.75);
+  }
+}
+
+.page {
+  $menu-height: 50px;
+  $menu-width: 180px;
+  $menu-background: #222;
+  $topbar-background: #34324c;
+  $menu-border: 0;
+
+  margin-left: ($menu-width + 15px);
+  margin-top: ($menu-height + 15px);
+  margin-right: 15px;
+  margin-bottom: 15px;
+
+  .menu {
+    border-right: $menu-border solid lighten($menu-background, 10%);
+    background: $menu-background;
+    background-image: linear-gradient(to right, $menu-background, lighten($menu-background, 1%));
+    background-position: top right;
+    background-repeat: repeat-y;
+    background-size: 10px 10px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $menu-width;
+    height: 100%;
+    z-index: 2;
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+
+    .top {
+      height: $menu-height;
+
+      padding: 15px;
+      font-size: 150%;
+
+      a {
+        display: inline-block;
+        padding-left: (25px + 5px);
+        background: url('../images/cryptfolio.png') 0px 2px no-repeat;
+        background-size: 25px 25px;
+        color: #eee;
+        height: (25px + 2px);
+        text-decoration: none;
+        font-weight: 600;
+      }
+    }
+
+    .navigation {
+      margin: 0;
+      padding: 15px;
+      list-style: none;
+    }
+  }
+
+  .topbar {
+    border-bottom: $menu-border solid lighten($topbar-background, 10%);
+    background: $topbar-background;
+    background-image: linear-gradient(to bottom, $topbar-background, lighten($topbar-background, 3%));
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    background-size: 15px 15px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $menu-height;
+    padding: 10px;
+    width: 100%;
+    text-align: right;
+
+    .user {
+      @include button(lighten(#34324C, 20%), 20px);
+      color: #eee;
+
+      .navigation {
+        // needs to drop down later
+        display: none;
+      }
+    }
+
+  }
+
+  .content {
+
+  }
+
+}
+

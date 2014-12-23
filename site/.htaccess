@@ -1,0 +1,14 @@
+RewriteEngine on
+
+# client-side URI mapping
+# if you are running in a top-level domain, you should use this:
+# RewriteBase /
+# ErrorDocument 404 /404.php
+# if you are running in a subfolder, you should instead use this:
+RewriteBase /openclerk.org
+ErrorDocument 404 /openclerk.org/404.php
+
+# Forbid access to any child PHP scripts
+RewriteRule ^([^\.]+)/([^\.]+).php$   -                   [F]
+
+RewriteRule ^([^\.]+)$                router.php?path=$1  [L,QSA]

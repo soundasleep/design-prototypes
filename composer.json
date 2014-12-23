@@ -1,0 +1,19 @@
+{
+  "name": "soundasleep/design-prototypes",
+  "require": {
+    "openclerk/routing": "dev-master",
+    "openclerk/pages": "dev-master",
+    "openclerk/config": "dev-master",
+    "soundasleep/php-helpers": "dev-master"
+  },
+  "repositories": [{
+    "type": "vcs",
+    "url": "https://github.com/openclerk/routing"
+  }, {
+    "type": "vcs",
+    "url": "https://github.com/openclerk/pages"
+  }, {
+    "type": "vcs",
+    "url": "https://github.com/soundasleep/php-helpers"
+  }]
+}
