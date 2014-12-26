@@ -47,7 +47,7 @@ html {
     background-repeat: repeat-y;
     background-size: 10px 10px;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: $menu-width;
@@ -87,10 +87,18 @@ html {
       text-shadow: 2px 2px 2px rgba(0,0,0,1);
 
       li {
+        margin-bottom: 20px;
+        cursor: pointer;
+
+        a {
+          display: block;
+        }
+
         b {
           display: block;
           font-size: 120%;
           font-weight: 600;
+          margin-bottom: 10px;
 
           &:hover {
             text-decoration: underline;
@@ -99,9 +107,6 @@ html {
           }
         }
 
-        margin-bottom: 25px;
-        cursor: pointer;
-
         ul {
           margin: 0;
           padding: 0;
@@ -109,7 +114,10 @@ html {
         }
 
         li {
-          margin: 5px 0 5px 15px;
+          // need to use padding rather than margin, so that the
+          // links capture clicks in the padding rather than the parent .dropdown
+          padding: 0 0 5px 15px;
+          margin: 0;
 
           a {
             text-decoration: none;
@@ -131,7 +139,7 @@ html {
     background-repeat: repeat-x;
     background-size: 15px 15px;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: $menu-height;
@@ -156,13 +164,20 @@ html {
 
       .navigation {
         // needs to drop down later
-        display: none;
       }
     }
 
   }
 
   .content {
+
+    .sample-graph {
+      width: 400px;
+      height: 300px;
+      display: inline-block;
+      border: 1px solid black;
+      margin: 10px;
+    }
 
   }
 
