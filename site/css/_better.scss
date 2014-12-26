@@ -33,3 +33,15 @@
 .btn {
   @include button(#ccc);
 }
+
+.dropdown {
+  ul {
+    display: none;
+  }
+
+  &.open {
+    ul {
+      display: block;
+    }
+  }
+}

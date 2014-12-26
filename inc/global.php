@@ -18,5 +18,5 @@ Openclerk\Config::merge(array(
 // set up pages
 \Pages\PageRenderer::addTemplatesLocation(__DIR__ . "/../site/templates");
 \Pages\PageRenderer::addStylesheet(\Openclerk\Router::urlFor("css/default.css"));
-// \Pages\PageRenderer::addJavascript("https://code.jquery.com/jquery-2.1.1.min.js");
-// \Pages\PageRenderer::addJavascript(\Openclerk\Router::urlFor("js/default.js"));
+\Pages\PageRenderer::addJavascript("https://code.jquery.com/jquery-2.1.1.min.js");
+\Pages\PageRenderer::addJavascript(\Openclerk\Router::urlFor("js/default.js"));
