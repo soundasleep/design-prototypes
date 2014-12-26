@@ -132,6 +132,8 @@ html {
   }
 
   .topbar {
+    $topbar-color: darken($topbar-background, 10%);
+
     border-bottom: $menu-border solid $topbar-border-color;
     background: $topbar-background;
     background-image: linear-gradient(to bottom, $topbar-background, lighten($topbar-background, 3%));
@@ -148,7 +150,7 @@ html {
     text-align: right;
 
     .user {
-      @include button(lighten($topbar-background, 30%), #eee, 20px);
+      @include button(lighten($topbar-background, 30%), $topbar-color, 20px);
 
       .profile-picture {
         display: inline-block;
@@ -161,9 +163,35 @@ html {
         background: lighten($topbar-background, 30%);
         margin-bottom: 1px;
       }
+    }
 
-      .navigation {
-        // needs to drop down later
+    .navigation {
+      display: block;
+      position: fixed;
+      top: ($menu-height - 15px);
+      background: lighten($topbar-background, 40%);
+      right: 12px;
+      min-width: 150px;
+      text-align: left;
+      list-style: none;
+      margin: 0;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid $topbar-background;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+
+      li {
+        margin: 5px 0;
+      }
+
+      a {
+        display: block;
+        color: $topbar-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
