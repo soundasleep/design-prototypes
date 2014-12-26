@@ -1,12 +1,16 @@
+$body-background: #FDFBF8;
+$body-color: #111;
+$link: #E4BF2A;
+
 html {
-  background: #111;
-  color: #eee;
+  background: $body-background;
+  color: $body-color;
 
   a {
-    color: #E4BF2A;
+    color: $link;
 
     &:hover {
-      color: mix(#E4BF2A, yellow);
+      color: mix($link, yellow);
       transition: color 0.1s linear 0s;
     }
   }
@@ -16,16 +20,21 @@ html {
   }
 
   h1 {
-    text-shadow: 3px 3px 4px rgba(0,0,0,0.75);
+    text-shadow: 3px 3px 4px rgba(0,0,0,0.25);
   }
 }
 
 .page {
   $menu-height: 50px;
   $menu-width: 180px;
-  $menu-background: #222;
-  $topbar-background: #34324c;
-  $menu-border: 0;
+  $menu-background: #171819;
+  $topbar-background: #574678;
+  $menu-border: 2px;
+  $menu-color: $body-background;
+  $menu-border-color: lighten($menu-background, 30%);
+  $topbar-border-color: lighten($topbar-background, 30%);
+  // $menu-border-color: black;
+  // $topbar-border-color: black;
 
   margin-left: ($menu-width + 15px);
   margin-top: ($menu-height + 15px);
@@ -33,7 +42,7 @@ html {
   margin-bottom: 15px;
 
   .menu {
-    border-right: $menu-border solid lighten($menu-background, 10%);
+    border-right: $menu-border solid $menu-border-color;
     background: $menu-background;
     background-image: linear-gradient(to right, $menu-background, lighten($menu-background, 1%));
     background-position: top right;
@@ -47,6 +56,7 @@ html {
     height: 100%;
     z-index: 2;
 
+    color: $menu-color;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 
     .top {
@@ -79,7 +89,7 @@ html {
   }
 
   .topbar {
-    border-bottom: $menu-border solid lighten($topbar-background, 10%);
+    border-bottom: $menu-border solid $topbar-border-color;
     background: $topbar-background;
     background-image: linear-gradient(to bottom, $topbar-background, lighten($topbar-background, 3%));
     background-position: bottom left;
@@ -96,6 +106,18 @@ html {
 
     .user {
       @include button(lighten($topbar-background, 30%), #eee, 20px);
+
+      .profile-picture {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-right: 4px;
+        height: 16px;
+        width: 16px;
+        border: 1px solid mix(lighten($topbar-background, 30%), #eee);
+        border-radius: 2px;
+        background: lighten($topbar-background, 30%);
+        margin-bottom: 1px;
+      }
 
       .navigation {
         // needs to drop down later
